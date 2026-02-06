@@ -2359,61 +2359,15 @@ public static class ConfigHandler
     {
         switch (type)
         {
-            case EPresetType.Default:
+            case EPresetType.Logistic:
                 config.ConstItem.GeoSourceUrl = "";
                 config.ConstItem.SrsSourceUrl = "";
-                config.ConstItem.RouteRulesTemplateSourceUrl = "";
+                config.ConstItem.RouteRulesTemplateSourceUrl = Global.RoutingRulesSources[0];;
 
                 await SQLiteHelper.Instance.DeleteAllAsync<DNSItem>();
                 await InitBuiltinDNS(config);
 
                 config.SimpleDNSItem = InitBuiltinSimpleDNS();
-                break;
-
-            case EPresetType.Russia:
-                config.ConstItem.GeoSourceUrl = Global.GeoFilesSources[1];
-                config.ConstItem.SrsSourceUrl = Global.SingboxRulesetSources[1];
-                config.ConstItem.RouteRulesTemplateSourceUrl = Global.RoutingRulesSources[1];
-
-                var xrayDnsRussia = await GetExternalDNSItem(ECoreType.Xray, Global.DNSTemplateSources[1] + "v2ray.json");
-                var singboxDnsRussia = await GetExternalDNSItem(ECoreType.sing_box, Global.DNSTemplateSources[1] + "sing_box.json");
-                var simpleDnsRussia = await GetExternalSimpleDNSItem(Global.DNSTemplateSources[1] + "simple_dns.json");
-
-                if (simpleDnsRussia == null)
-                {
-                    xrayDnsRussia.Enabled = true;
-                    singboxDnsRussia.Enabled = true;
-                    config.SimpleDNSItem = InitBuiltinSimpleDNS();
-                }
-                else
-                {
-                    config.SimpleDNSItem = simpleDnsRussia;
-                }
-                await SaveDNSItems(config, xrayDnsRussia);
-                await SaveDNSItems(config, singboxDnsRussia);
-                break;
-
-            case EPresetType.Iran:
-                config.ConstItem.GeoSourceUrl = Global.GeoFilesSources[2];
-                config.ConstItem.SrsSourceUrl = Global.SingboxRulesetSources[2];
-                config.ConstItem.RouteRulesTemplateSourceUrl = Global.RoutingRulesSources[2];
-
-                var xrayDnsIran = await GetExternalDNSItem(ECoreType.Xray, Global.DNSTemplateSources[2] + "v2ray.json");
-                var singboxDnsIran = await GetExternalDNSItem(ECoreType.sing_box, Global.DNSTemplateSources[2] + "sing_box.json");
-                var simpleDnsIran = await GetExternalSimpleDNSItem(Global.DNSTemplateSources[2] + "simple_dns.json");
-
-                if (simpleDnsIran == null)
-                {
-                    xrayDnsIran.Enabled = true;
-                    singboxDnsIran.Enabled = true;
-                    config.SimpleDNSItem = InitBuiltinSimpleDNS();
-                }
-                else
-                {
-                    config.SimpleDNSItem = simpleDnsIran;
-                }
-                await SaveDNSItems(config, xrayDnsIran);
-                await SaveDNSItems(config, singboxDnsIran);
                 break;
         }
 
