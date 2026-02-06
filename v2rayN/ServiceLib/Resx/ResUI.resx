@@ -1293,14 +1293,8 @@
   <data name="menuRegionalPresets" xml:space="preserve">
     <value>Regional presets setting</value>
   </data>
-  <data name="menuRegionalPresetsDefault" xml:space="preserve">
-    <value>Default</value>
-  </data>
-  <data name="menuRegionalPresetsRussia" xml:space="preserve">
-    <value>Russia</value>
-  </data>
-  <data name="menuRegionalPresetsIran" xml:space="preserve">
-    <value>Iran</value>
+  <data name="menuRegionalPresetsLogistic" xml:space="preserve">
+    <value>Logistic</value>
   </data>
   <data name="TbSettingsChinaUserTip" xml:space="preserve">
     <value>Users in China region can ignore this item</value>
