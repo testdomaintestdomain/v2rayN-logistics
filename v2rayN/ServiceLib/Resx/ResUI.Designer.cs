@@ -1440,29 +1440,12 @@ namespace ServiceLib.Resx {
         /// <summary>
         ///   查找类似 Default 的本地化字符串。
         /// </summary>
-        public static string menuRegionalPresetsDefault {
+        public static string menuRegionalPresetsLogistic {
             get {
-                return ResourceManager.GetString("menuRegionalPresetsDefault", resourceCulture);
+                return ResourceManager.GetString("menuRegionalPresetsLogistic", resourceCulture);
             }
         }
         
-        /// <summary>
-        ///   查找类似 Iran 的本地化字符串。
-        /// </summary>
-        public static string menuRegionalPresetsIran {
-            get {
-                return ResourceManager.GetString("menuRegionalPresetsIran", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Russia 的本地化字符串。
-        /// </summary>
-        public static string menuRegionalPresetsRussia {
-            get {
-                return ResourceManager.GetString("menuRegionalPresetsRussia", resourceCulture);
-            }
-        }
         
         /// <summary>
         ///   查找类似 Reload 的本地化字符串。
