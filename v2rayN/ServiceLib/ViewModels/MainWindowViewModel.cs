@@ -45,11 +45,7 @@ public class MainWindowViewModel : MyReactiveObject
     public ReactiveCommand<Unit, Unit> OpenTheFileLocationCmd { get; }
 
     //Presets
-    public ReactiveCommand<Unit, Unit> RegionalPresetDefaultCmd { get; }
-
-    public ReactiveCommand<Unit, Unit> RegionalPresetRussiaCmd { get; }
-
-    public ReactiveCommand<Unit, Unit> RegionalPresetIranCmd { get; }
+    public ReactiveCommand<Unit, Unit> RegionalPresetLogisticCmd { get; }
 
     public ReactiveCommand<Unit, Unit> ReloadCmd { get; }
 
