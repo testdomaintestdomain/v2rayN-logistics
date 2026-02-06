@@ -203,19 +203,9 @@ public class MainWindowViewModel : MyReactiveObject
             await Reload();
         });
 
-        RegionalPresetDefaultCmd = ReactiveCommand.CreateFromTask(async () =>
+        RegionalPresetLogisticCmd = ReactiveCommand.CreateFromTask(async () =>
         {
-            await ApplyRegionalPreset(EPresetType.Default);
-        });
-
-        RegionalPresetRussiaCmd = ReactiveCommand.CreateFromTask(async () =>
-        {
-            await ApplyRegionalPreset(EPresetType.Russia);
-        });
-
-        RegionalPresetIranCmd = ReactiveCommand.CreateFromTask(async () =>
-        {
-            await ApplyRegionalPreset(EPresetType.Iran);
+            await ApplyRegionalPreset(EPresetType.Logistic);
         });
 
         #endregion WhenAnyValue && ReactiveCommand
